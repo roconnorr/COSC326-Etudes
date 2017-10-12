@@ -1,0 +1,66 @@
+BEGIN {
+    FALSE = 0
+    TRUE = 1
+    empty_lines = 0
+    comment_lines = 0
+    rule_lines = 0
+    number_lines = 0
+    last_was_empty = FALSE
+    in_rule_group = FALSE
+}
+
+/^$/ {
+    if (in_rule_group) {
+	print FILENAME ":" FNR ": number line missing from last scenario"
+    }
+    if (last_was_empty) {
+	print FILENAME ":" FNR ": extra empty line"
+    }
+    empty_lines++
+    last_was_empty = TRUE
+    next
+}
+
+/^#/ {
+    comment_lines++
+  # We do not clear last_was_empty.
+  # That is not a mistake.
+  # Comment lines are ignored COMPLETELY.
+    next
+}
+
+/^[0-9]+$/ {
+    if (!in_rule_group) {
+	print FILENAME ":" FNR ": number line with no rules before it"
+    }
+    last_was_empty = in_rule_group = FALSE
+    number_lines++
+    next
+}
+
+/^. [NESW][NESW][NESW][NESW] ....$/ {
+    in_rule_group = TRUE
+    last_was_empty = FALSE
+    rule_lines++
+    next
+}
+
+TRUE {
+    print FILENAME ":" FNR ": not empty, comment, rule, or number line"
+    next
+}
+
+END {
+    if (last_was_empty) {
+	print FILENAME ": empty line at end"
+    }
+    if (in_rule_group) {
+	print FILENAME ": number line missing from last scenario"
+    }
+    print comment_lines, "comment lines,",
+	  empty_lines,   "empty lines,",
+	  rule_lines,    "rule lines, and",
+	  number_lines,  "number lines."
+}
+
+

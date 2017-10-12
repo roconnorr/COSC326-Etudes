@@ -1,0 +1,4 @@
+w SWNE wbbw
+b WNES bwbb
+6
+#comment

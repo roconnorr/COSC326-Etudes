@@ -1,0 +1,47 @@
+Rory O'Connor - 9825774
+
+1) 
+        | English | History | French | Maths | Science | Total
+---------------------------------------------------------------
+Alan    |5        |5        |5       |4      |5        |24
+Barbara |4        |4        |4       |1      |2        |15
+Charles |3        |3        |3       |3      |1        |13
+David   |2        |2        |2       |2      |4        |12
+Ellen   |1        |1        |1       |5      |3        |11
+
+Alan's aggregate mark was 24. An aggregate mark is out of 25 therefore Alan's score can only be the result of four 5s and a 4. Because Ellen scored 5 in maths, this is the subject where Alan scored 4.
+
+Charles got the same mark in 4 subjects and his aggregate had to be the middle score. If he recieved four 4s his aggregate would have to be higher than Barbara's, because he would have all of the highest scores remaining. If he recieved four 2s the maximum his aggregate could be is 12 (2+2+2+2+4). Ellen's minimum aggregate is 11 (1+1+1+5+3). This means David's aggregate would not fit between Ellen's and Charles'. Therefore Charles scored 3s in English, History, French and Maths. He did not score 3 in science because Ellen scored 3 in science.
+
+Charles can't score a 4 in science because then his score would be 16 and Barbara's maximum score would be (4+4+4+2+2) = 16 and no two scores are the same. Therefore Charles' total is between 13 and 14, because he can only score 1 or 2 in science, as 3 is taken by Ellen. This means David's aggregate score can only be 12(one more than Ellen's minimum) or 13(one less than Charles' maximum). Ellen's score can only be 11(1+1+1+5+3) or 12(one less than David's maximum). Therefore Ellen can't have any 4s (4+1+1+5+3 = 14) and must have at least two 1s (2+2+1+5+3 = 13).
+
+The scores 4,2 and 1 are left in English, History, French and Science. Ellen can't recieve 4s, David can only recieve one of the remaining 4s, because if he recieves two 4s, Barbara will only have enough points to beat charles if Barbara recieves 2 in maths (4+4+2+2+2 = 14) and Charles recieves a 1 in science, giving him (3+3+3+3+1 = 13). If the remaining numbers are distributed to David he recieves (2,2,4,1,4 = 13), the same score as Charles. This cannot be fixed by swapping a 1 and 2 between David and Ellen because then David's score is (1+2+4+1+4 = 12) and Ellen's is (2+1+1+5+3 = 12). Therefore David can only recieve one of the remaining 4s and must recieve all remaining 2s (including the one for maths) to beat Ellen's minimum score of 11 and recieve less than Charles' minimum score of 13. 
+
+The solution is ambiguous in that the subjects (English, History, French, Science) Barbara and David get a 2 or 4 in can be swapped. But Barbara must recieve three 4s and David must recieve four 2s, leaving only a 1 in maths, scored by Barbara.
+
+Barbara's mark in mathematics is 1.
+Alan, Charles and David recieved the same mark in 4/5 subjects.
+
+2)
+
+| Team | Played | Won | Lost | Drawn | GFor | GAgainst | Points
+---------------------------------------------------------------
+A      |3       |2    |1     |0      |2     |1         |4
+B      |1       |0    |0     |1      |0     |0         |1
+C      |3       |3    |0     |0      |5     |0         |6
+D      |3       |0    |2     |1      |0     |4         |1
+E      |4       |0    |2     |2      |0     |2         |2
+
+Team E has played 4 games, has 2 points and has drawn twice. A draw is worth 1 point and a loss is worth 0 points so Team E has lost 2 games and won 0. E has to have played all the other teams once, and no other team has played Team B, because they have only played 1 game. 
+
+Team C has 6 points and has played a maximum of 3 games, playing against all teams (except B) once. A win is worth 2 points so the only way they can have 6 points is if they won all 3 games. Therefore Team C has played 3 games, won 3 games and lost/drawn 0 games.
+
+Team A lost against Team C 1-0, because Team C has won all 3 of their games and Team A has only had 1 goal scored against them. Team A has also played a maximum of 3 games (none against B, 1 against everyone else). They have 4 points so they must have won 2 games, against team D and team E. They also must have drawn none and played 3 overall.
+
+Team E has lost twice, to team A and team C. Therefore, Team B's game against Team E was a draw. Team E has only had 2 goals scored against them, so their losses to team A and team C were both 1-0. This means that their two draw games scores were both 0-0, making team B's goals for and against 0, and Team E's goals for 0.
+
+Team E has played everyone, and Team A and C have played 3 games, so Team D has also played 3 games. They drew with Team E, lost against team C (who are undefeated) and also lost to team A, whose only loss was to team C.
+
+Team C won 3 games, against A, D and E. They could only have scored 1 goal against A (only one goal was scored against A) and only 1 goal against E (1 goal was scored against E for each of their losses). This leaves 3 goals scored by team C and none scored against team C in their game against team D. Therefore:
+
+Team C has played Team D, they beat them 3-0
