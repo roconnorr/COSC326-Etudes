@@ -1,0 +1,40 @@
+Jake Redmond 9808422, Ryan Swanepoel 6535816, Rory O'Connor 9825774
+
+
+Supersize: Arithmetic
+
+Implemented: Prefix ("Polish") and postfix ("reverse Polish") notation support
+
+Why: Polish notation of basic equations is a good way to help beginning students understand 
+        functions (1 + 2 is easier to translate to a function add(1,2) when you have the intermediate step
+        1 + 2 <=> + 1 2). It also translates more cleanly to how some languages read equations and can reduce the kinds of characters
+	used to just binary operators and numbers. The reason for this is that in prefix notation an operator at the lowest level is always
+	followed by its two arguments, and the higher levels cannot be calculated until this lowest function is: the logical notation
+	equivalent of parentheses. For example, the funcntion * + 1 2 3. This is equivalent to (1 + 2) * 3, and therefore becomes 3 * 3 = 9.
+	On the other hand, * 1 + 2 3 is equivalent to 1 * (2 + 3) and therefore becomes 1 * 5 before finally becoming 5. So, order of operations is dependant upon input
+	order, a feat that cannot be accomplished in infix notation.
+
+     Reverse Polish notation is particularly useful for structures built on stacks; an example operation (4+3)*2 would be written
+	as 4 3 + 2 *. In this case, the last operation input, 4 3 +, is also the first that needs to be executed, perfectly
+	syncing the actions of the stack with how input is read. As is noted below, translating between different mathematic notations
+	is inefficient at large sizes when compared to having a user input the numbers directly. Translation is an n^2 algorithm (one
+	run through to build the tree, and again to read it), which is not atrocious, but with the number of equations involved in computing
+	this can quickly add up.
+
+
+How: in this case the implementation was hard-coded to a length of 3, so the indices being accessed
+		to compute a solution were merely shuffled around. However, a general solution would involve building
+		a binary tree; our understanding is that there is no more efficient way to do this, which would create
+		a strong case for having users input equations in the way easiest for the computer to work with rather
+		than having it translate input. Each operator must have two children, while each number has none.
+		For example, the tree for + 1 2, 1 + 2, and 1 2 +:
+
+							    +
+							   / \
+							   1 2
+
+		Each different notation reads this tree a different way, but they accomplish the same thing. However, translating
+	Between the three can be difficult, as in order to translate between equations of arbitrary length you always have to construct
+	a complete tree of the equation. Reading the tree in any particular way is fairly simple; prefix notation reads everything the
+	first time it passes it; infix notation reads the left child, the root, and then the right child; and postfix notation reads
+	the left child, the right child, and then their parent.
